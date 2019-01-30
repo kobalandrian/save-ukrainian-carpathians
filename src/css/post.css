@@ -1,0 +1,144 @@
+*,
+ :after,
+ :before {
+    box-sizing: inherit;
+}
+
+.row::after {
+    clear: both;
+}
+
+.row::before {
+    content: '';
+    /*display: table;*/
+}
+
+
+/*
+.col-1 {
+    width: 8.33333%
+}
+
+.col-2 {
+    width: 16.66666%
+}
+
+.col-3 {
+    width: 24.99999%
+}
+
+.col-4 {
+    width: 33.33333%
+}
+
+.col-5 {
+    width: 41.66666%
+}
+
+.col-6 {
+    width: 49.99999%
+}
+
+.col-7 {
+    width: 58.33333%
+}
+
+.col-8 {
+    width: 66.66666%
+}
+
+.col-9 {
+    width: 74.99999%
+}
+
+.col-10 {
+    width: 83.33333%
+}
+
+.col-11 {
+    width: 91.66666%
+}
+
+.col-12 {
+    width: 99.99999%
+}
+
+
+.Post-size {
+    height: 520px;
+    overflow-y: scroll;
+}
+*/
+
+.Post {
+    /*background-image: url("img/header2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    
+    overflow-x: hidden;    
+    */
+    display: block;
+    box-sizing: border-box;
+    padding: 0 16px 32px 16px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    position: relative;
+    color: rgb(0, 40, 90);
+}
+
+.post-title {
+    position: relative;
+    color: black;
+    padding: 0 16px;
+    margin-left: 0;
+    text-align: left;
+    font-weight: 400;
+}
+
+.avatar {
+    /*
+    margin: 0 0 8px 0;
+    */
+    max-width: 100%;
+    height: 240px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.788);
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-text {
+    position: inherit;
+    color: rgb(0, 40, 90);
+    text-align: justify;
+    margin: 16px 0 16px 0;
+}
+
+.post-autor {
+    padding: 4px 0;
+    border-top: 0.15rem solid black;
+    border-bottom: 0.1rem solid black;
+    background-color: rgba(238, 238, 238, 0.788);
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    color: rgb(54, 54, 54);
+}
+
+.autor,
+.date {
+    margin: 0;
+    font-weight: inherit;
+    padding: 8px 16px;
+    vertical-align: middle;
+}
+
+@media(max-width:768px) {
+    .col-10 {
+        width: 83.33333%
+    }
+}

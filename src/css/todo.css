@@ -1,0 +1,129 @@
+*,
+ :after,
+ :before {
+    box-sizing: inherit;
+}
+
+.row::after {
+    clear: both;
+}
+
+.row::before {
+    content: '';
+    display: table;
+}
+
+.col-6 {
+    width: 49.99999%
+}
+
+.title {
+    position: relative;
+    color: black;
+    padding: 8px 16px;
+    margin-left: 0;
+    text-align: left;
+    font-weight: 400;
+}
+
+.todoListMain {
+    font-family: sans-serif;
+    position: relative;
+    color: rgb(0, 40, 90);
+    padding: 2px 32px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(221, 221, 221, 0.65);
+    display: block;
+    height: 520px;
+    overflow-y: scroll;
+}
+
+.btn-add-post {
+    float: right;
+    margin: 0;
+    padding: 8px 16px;
+    background: rgba(51, 153, 184, 0.747);
+    border: rgba(51, 153, 184, 0.747);
+    color: white;
+}
+
+.hide {
+    display: none;
+    transition: 0.75s;
+}
+
+.visible {
+    display: block;
+    transition: 0.75s;
+}
+
+.todoListMain .header input {
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #003399;
+    width: 100%;
+}
+
+.todoListMain .header button {
+    padding: 10px;
+    font-size: 14px;
+    margin: 10px;
+    margin-right: 0px;
+    background-color: #0066FF;
+    color: #FFF;
+    border: 2px solid #0066FF;
+}
+
+.todoListMain .header button:hover {
+    background-color: #003399;
+    border: 2px solid #003399;
+    cursor: pointer;
+}
+
+.todoListMain .theList {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+}
+
+.todoListMain .theList li {
+    color: #333;
+    background-color: inherit rgba(51, 184, 133, 0.747);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+ul.theList {
+    padding: 0;
+}
+
+.textarea {
+    font-family: sans-serif;
+    width: 100%;
+    height: 80px;
+    border: 2px solid #003399;
+    resize: none;
+}
+
+.btn-delete {
+    float: right;
+    margin: 0;
+    padding: 2px;
+    background: none;
+    border: none;
+    color: red;
+}
+
+.hide {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .col-10 {
+        width: 83.33333%
+    }
+}
