@@ -48,28 +48,87 @@ ul.nav-menu li a {
 
 .active {
     background-color: rgba(51, 184, 133, 0.747);
-    color: white;
 }
 
 h1.title {
-    color: black;
+    color:rgb(83, 3, 3);
     margin: 0;
     padding: 12px 0;
     text-align: center;
     font-size: 2rem;
+    font-weight: bold;
 }
 
 .btn-stop {
+    position: relative;
     float: right;
-    margin: 16px auto;
-    padding: 4px 8px;
-    background: rgba(51, 184, 133, 0.747);
+    margin: 8px auto;
+    padding: 8px 12px;
+    background: none;
     border: none;
     z-index: 13;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/*
+.tooltip {
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+*/
+
+.btn-stop .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 25%;
+    left: -250%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-stop .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 103%;
+    transform: rotate(270deg);
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.btn-stop:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 @media(max-width:768px) {
+    .bgimg {
+        height: 100vh;
+        background-image: url("../img/header1.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 13;
+    }
+    .slider-wrapper{
+        display: none;
+    }
+    .btn-stop{
+        display: none;
+    }
     h1.title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 }

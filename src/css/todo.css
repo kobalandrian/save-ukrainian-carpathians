@@ -13,8 +13,65 @@
     display: table;
 }
 
+
+/*
+.col-1 {
+    width: 8.33333%
+}
+
+.col-2 {
+    width: 16.66666%
+}
+
+.col-3 {
+    width: 24.99999%
+}
+
+.col-4 {
+    width: 33.33333%
+}
+
+.col-5 {
+    width: 41.66666%
+}
+
 .col-6 {
     width: 49.99999%
+}
+
+.col-7 {
+    width: 58.33333%
+}
+
+.col-8 {
+    width: 66.66666%
+}
+
+.col-9 {
+    width: 74.99999%
+}
+
+.col-10 {
+    width: 83.33333%
+}
+
+.col-11 {
+    width: 91.66666%
+}
+
+.col-12 {
+    width: 99.99999%
+}
+
+
+.Post-size {
+    height: 520px;
+    overflow-y: scroll;
+}
+*/
+
+.col-10 {
+    width: 83.33333%
 }
 
 .title {
@@ -34,10 +91,27 @@
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(221, 221, 221, 0.65);
+    background-color: rgba(221, 221, 221, 0.75);
     display: block;
-    height: 520px;
+    /*height: 420px;*/
+    height: 72vh;
     overflow-y: scroll;
+    transition: all 2s ease-in-out;
+}
+
+.add-post {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.add-post-title {
+    position: relative;
+    color: black;
+    margin: 16px 0;
+    padding: 0 16px;
+    margin-left: 0;
+    text-align: left;
+    font-weight: 400;
 }
 
 .btn-add-post {
@@ -49,14 +123,20 @@
     color: white;
 }
 
-.hide {
-    display: none;
-    transition: 0.75s;
+.btn-add-post:hover {
+    background-color: #003399;
+    cursor: pointer;
 }
 
-.visible {
+.hide {   
+    transition: all 2s ease-in-out;
+    display: none;
+}
+
+.visible {    
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
     display: block;
-    transition: 0.75s;
 }
 
 .todoListMain .header input {
@@ -66,17 +146,17 @@
     width: 100%;
 }
 
-.todoListMain .header button {
+.todoListMain .header .btn-public {
+    text-align: center;
+    margin: 10px auto;
     padding: 10px;
     font-size: 14px;
-    margin: 10px;
-    margin-right: 0px;
     background-color: #0066FF;
     color: #FFF;
     border: 2px solid #0066FF;
 }
 
-.todoListMain .header button:hover {
+.todoListMain .header .btn-public:hover {
     background-color: #003399;
     border: 2px solid #003399;
     cursor: pointer;
@@ -110,20 +190,67 @@ ul.theList {
 }
 
 .btn-delete {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     margin: 0;
-    padding: 2px;
+    padding: 2px 4px;
     background: none;
     border: none;
     color: red;
+    cursor: pointer;
 }
 
 .hide {
     display: none;
 }
 
-@media(max-width:768px) {
+.btn-delete .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -25%;
+    right: 120%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-delete .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 103%;
+    transform: rotate(270deg);
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.btn-delete:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width:768px) {
+    .todoListMain {
+        /*
+        height: 520px;
+        */
+        height: 80vh;
+        padding: 2px 16px;
+    }
+    .todoListMain .theList li {
+        padding: 16px 0 32px 0;
+    } 
     .col-10 {
         width: 83.33333%
     }
+
 }
