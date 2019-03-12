@@ -103,13 +103,16 @@ class TodoList extends Component {
   render() {
 
     return (         
-      <section className="todoListMain col-6 col-10">
-        <h2 className = "post-title" > Add Post
-          <button className="btn-add-post" onClick={this.addPost}>Add Post</button>
-        </h2>
+      <section className="todoListMain col-10">
+        <div className="add-post ">
+          <h2 className = "add-post-title" > Add Post
+            <button className="btn-add-post" onClick={this.addPost}>Add Post</button>
+          </h2>
+        </div>
+        
 
         <article className={this.state.classPost}>           
-          <div className="header">
+          <div className="header add-post col-6">
             <form onSubmit={this.addItem}>
               <label > Post Title <br />
                 <input type = "text" placeholder = "Post Title" ref={(b) => this._inputTitle = b} required />
@@ -126,8 +129,8 @@ class TodoList extends Component {
               <label > Image URL - <span className = "highlight" > use this one to test 'https://bit.ly/1P9prpc' </span> 
                 <input type = "url"  ref={(d) => this._inputImg = d} placeholder = "The URL of the featured image for your post"  />
               </label> 
-              <br />
-              <button type="submit">Public Post</button>
+              <br />             
+                <button type="submit" className="btn-public">Public Post</button>              
             </form>
           </div>
         </article>
@@ -136,15 +139,21 @@ class TodoList extends Component {
        <ol className="theList">
         {this.state.list.map(list => {
           return(
-            <li className = "Post" key={list.key}>
-              <button className="btn-delete" onClick={() => this.deleteItem(list.id)}>x</button>
-              <h2 className = "post-title" > {list.title}  </h2>  
-              <img className = "avatar" src = {list.img} alt = { list.title } />      
-              <div className = "post-text" > {list.text}  </div>      
-              <div className = "post-autor" >
-                <h4 className = "autor col-6" > Autor:  {list.name} </h4>
-                <div className = "date col-6" > {list.year +' / '+ list.month +' / '+ list.day} </div> 
-              </div>     
+            <li className = "Post flex-container" key={list.key}>
+              <button className="btn-delete" onClick={() => this.deleteItem(list.id)}>x
+                <span className="tooltiptext">Delete</span>
+              </button>
+              <div className="flex-items">
+                <img className = "avatar" src = {list.img} alt = { list.title } />      
+              </div>
+              <div className="flex-items">
+                <h2 className = "post-title" > {list.title}  </h2>  
+                <div className = "post-text" > {list.text}  </div>      
+                <div className = "post-autor" >
+                  <h4 className = "autor col-6" > Autor:  {list.name} </h4>
+                  <div className = "date col-6" > {list.year +' / '+ list.month +' / '+ list.day} </div> 
+                </div>
+              </div>                   
             </li>  
           )
         })}
